@@ -7,6 +7,6 @@ resources:
 
 namespace: js-server
 
-image:
+images:
 - name: js-server
   newName: js-server
