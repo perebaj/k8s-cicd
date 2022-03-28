@@ -1,26 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  js-server
+  name: js-server
   labels:
-    app:  js-server
+    app: js-server
 spec:
   selector:
     matchLabels:
       app: js-server
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
-        app:  js-server
+        app: js-server
     spec:
       # initContainers:
-        # Init containers are exactly like regular containers, except:
-          # - Init containers always run to completion.
-          # - Each init container must complete successfully before the next one starts.
+      # Init containers are exactly like regular containers, except:
+      # - Init containers always run to completion.
+      # - Each init container must complete successfully before the next one starts.
       containers:
-      - name:  js-server
-        image:  perebaj/js-server:1.0.0
-        ports:
-        - containerPort:  8080
-        
+        - name: js-server
+          image: perebaj/js-server:1.0.0
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          readinessProbe: #Readiness probes allow Kubernetes to determine when a pod is ready to accept traffic. This ensures that client requests will not be routed to pods that are unable to process them.
+            tcpSocket:
+              port: 8080
+          ports:
+            - containerPort: 8080
+          livenessProbe: #Liveness probes allow Kubernetes to determine when a pod should be replaced. They are fundamental in configuring a resilient cluster architecture.
+            tcpSocket:
+              port: 8080
