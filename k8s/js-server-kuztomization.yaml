@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Kustomization
+
+resources:
+  - js-server-deployment.yaml
+  - js-server-service.yaml
+
+namespace: js-server
+
+image:
+- name: js-server
+  newName: js-server
