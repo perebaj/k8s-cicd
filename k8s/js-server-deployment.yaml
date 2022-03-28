@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name:  js-server
-  namespace: default
   labels:
     app:  js-server
 spec:
@@ -10,11 +9,6 @@ spec:
     matchLabels:
       app: js-server
   replicas: 1
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
       labels:
