@@ -20,7 +20,7 @@ spec:
       # - Each init container must complete successfully before the next one starts.
       containers:
         - name: js-server
-          image: perebaj/js-server:1.0.0
+          image: perebaj/js-server:latest
           resources:
             requests:
               memory: "64Mi"
