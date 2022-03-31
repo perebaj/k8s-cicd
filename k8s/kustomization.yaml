@@ -8,5 +8,5 @@ resources:
 namespace: js-server
 
 images:
-- name: js-server
-  newName: js-server
+- name: perebaj/js-server
+  newTag: latest
