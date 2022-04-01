@@ -6,7 +6,3 @@ resources:
   - js-server-service.yaml
 
 namespace: js-server
-
-images:
-- name: perebaj/js-server
-  newTag: latest
