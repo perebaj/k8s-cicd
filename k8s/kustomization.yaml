@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - js-server-deployment.yaml
   - js-server-service.yaml
-
+  - https://raw.githubusercontent.com/argoproj-labs/argocd-image-updater/master/manifests/install.yaml
 namespace: js-server
 
 # images:
