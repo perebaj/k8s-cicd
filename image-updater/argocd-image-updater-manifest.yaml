@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: perebaj/js-server
+    argocd-image-updater.argoproj.io/yourtool.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git
+  name: guestbook
+  namespace: argocd
+spec:
+  destination:
+    namespace: guestbook-demo
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s
+    repoURL: https://github.com/perebaj/k8s-cicd
+    targetRevision: HEAD
