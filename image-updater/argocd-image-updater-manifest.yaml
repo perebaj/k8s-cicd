@@ -9,10 +9,10 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: guestbook-demo
+    namespace: js-server
     server: https://kubernetes.default.svc
   project: default
   source:
     path: k8s
     repoURL: https://github.com/perebaj/k8s-cicd
-    targetRevision: HEAD
+    targetRevision: main
