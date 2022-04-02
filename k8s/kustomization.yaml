@@ -1,11 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 resources:
-  - js-server-deployment.yaml
-  - js-server-service.yaml
+- js-server-deployment.yaml
+- js-server-service.yaml
 namespace: js-server
-
 images:
-  - name: perebaj/js-server
-    newTag: 1.7.0
+- name: perebaj/js-server
+  newTag: 1.9.0
