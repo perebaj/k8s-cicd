@@ -53,6 +53,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: perebaj/js-server:${{env.SHA}}
+          tags: perebaj/js-server:aslkdasjd
 
 
