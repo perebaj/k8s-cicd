@@ -6,4 +6,4 @@ resources:
 namespace: js-server
 images:
 - name: perebaj/js-server
-  newTag: "12931"
+  newTag: adskjas
