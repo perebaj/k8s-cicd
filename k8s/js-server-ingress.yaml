@@ -1,28 +1,28 @@
 # https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource
 
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: js-server-ingress
-  namespace: js-server
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1k
-spec:
-  ingressClassName: nginx
-  defaultBackend:
-    service:
-      name: js-server
-      port:
-        number: 8080
-  rules:
-  - host: js-server.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: js-server
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: js-server-ingress
+#   namespace: js-server
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /$1k
+# spec:
+#   ingressClassName: nginx
+#   defaultBackend:
+#     service:
+#       name: js-server
+#       port:
+#         number: 8080
+#   rules:
+#   - host: js-server.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: js-server
             
-            port:
-              number: 8080
+#             port:
+#               number: 8080

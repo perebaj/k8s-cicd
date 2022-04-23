@@ -2,9 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: js-server
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-resource-group: poc-data-driven
 spec:
   selector:
     app: js-server
+  loadBalancerIP: 20.85.180.29
   type: LoadBalancer
   sessionAffinity: None
   sessionAffinityConfig:
@@ -13,7 +16,7 @@ spec:
   ports:
   - name: js-server
     protocol: TCP
-    port: 8080
+    port: 80
     targetPort: 8080 
     # If you set the `spec.type` field to `NodePort` and you want a specific port number,
     # you can specify a value in the `spec.ports[*].nodePort` field.

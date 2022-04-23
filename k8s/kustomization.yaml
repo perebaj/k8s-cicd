@@ -4,7 +4,7 @@ resources:
 - js-server-namespace.yaml
 - js-server-deployment.yaml
 - js-server-service.yaml
-- js-server-ingress.yaml
+# - js-server-ingress.yaml
 namespace: js-server
 images:
 - name: perebaj/js-server
